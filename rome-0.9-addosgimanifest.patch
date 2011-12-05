@@ -1,0 +1,13 @@
+diff -up ./build.xml.osgimanifest ./build.xml
+--- ./build.xml.osgimanifest	2008-07-25 11:58:58.000000000 -0400
++++ ./build.xml	2008-07-25 11:59:40.000000000 -0400
+@@ -68,7 +68,8 @@
+   </target>
+   
+   <target name="jar" description="Create the jar" depends="compile">
+-    <jar jarfile="${defaulttargetdir}/${final.name}.jar" excludes="**/package.html" basedir="${classesdir}" />
++      <jar jarfile="${defaulttargetdir}/${final.name}.jar" excludes="**/package.html" basedir="${classesdir}"
++	  manifest="MANIFEST.MF" />
+   </target>
+   
+   <target name="clean" description="Clean up the generated directories">
