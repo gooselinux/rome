@@ -1,6 +1,6 @@
 Name:		rome
 Version:	0.9
-Release:	4.2%{?dist}
+Release:	4.2%{?dist}.goose.1
 Summary:	RSS and Atom Utilities
 
 Group:		Development/Libraries
@@ -44,7 +44,7 @@ This package contains the API documentation for %{name}.
 %setup -q
 find -name '*.jar' -o -name '*.class' -exec rm -f '{}' \;
 mkdir -p target/lib
-ln -s %{_javadir}/jdom-1.0.jar target/lib
+ln -s %{_javadir}/jdom-1.1.1.jar target/lib
 cp -p %{SOURCE1} .
 %patch0
 
@@ -74,6 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{name}
 
 %changelog
+* Thu Jan  5 2011 Clint Savage <herlo@gooseproject.org> 0.9-4.2.goose.1
+- Upstream provides jdom-1.1.1, using that instead of jdom-1.0
+
 * Mon Jan 11 2010 Andrew Overholt <overholt@redhat.com> 0.9-4.2
 - Update URL in instructions for getting MANIFEST.
 
